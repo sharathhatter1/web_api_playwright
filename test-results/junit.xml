@@ -1,0 +1,389 @@
+<testsuites id="" name="" tests="23" failures="7" skipped="0" errors="0" time="43.958242000000006">
+<testsuite name="api/auth.spec.ts" timestamp="2025-06-27T13:48:58.109Z" hostname="chromium" tests="2" failures="1" skipped="0" time="2.789" errors="0">
+<testcase name="Authentication API Tests › User login" classname="api/auth.spec.ts" time="1.395">
+</testcase>
+<testcase name="Authentication API Tests › Invalid login credentials" classname="api/auth.spec.ts" time="1.394">
+<failure message="auth.spec.ts:29:3 Invalid login credentials" type="FAILURE">
+<![CDATA[  [chromium] › api/auth.spec.ts:29:3 › Authentication API Tests › Invalid login credentials ────────
+
+    SyntaxError: Unexpected token 'u', "username o"... is not valid JSON
+
+       at ../api/ApiClient.ts:26
+
+      24 |     return {
+      25 |       status: response.status(),
+    > 26 |       data: await response.json(),
+         |             ^
+      27 |       headers: response.headers()
+      28 |     };
+      29 |   }
+        at ApiClient.post (/Users/sharathhatter/code/projects/Du_Web_API/api/ApiClient.ts:26:13)
+        at /Users/sharathhatter/code/projects/Du_Web_API/tests/api/auth.spec.ts:36:22
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/api-auth-Authentication-API-Tests-Invalid-login-credentials-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/api-auth-Authentication-API-Tests-Invalid-login-credentials-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|api-auth-Authentication-API-Tests-Invalid-login-credentials-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="api/cart.spec.ts" timestamp="2025-06-27T13:48:58.109Z" hostname="chromium" tests="4" failures="0" skipped="0" time="3.064" errors="0">
+<testcase name="Cart API Tests › Create new cart" classname="api/cart.spec.ts" time="1.101">
+</testcase>
+<testcase name="Cart API Tests › Get user carts" classname="api/cart.spec.ts" time="1.181">
+</testcase>
+<testcase name="Cart API Tests › Update cart" classname="api/cart.spec.ts" time="0.334">
+</testcase>
+<testcase name="Cart API Tests › Delete cart" classname="api/cart.spec.ts" time="0.448">
+</testcase>
+</testsuite>
+<testsuite name="api/categories.spec.ts" timestamp="2025-06-27T13:48:58.109Z" hostname="chromium" tests="2" failures="0" skipped="0" time="3.8" errors="0">
+<testcase name="Categories API Tests › Get all categories" classname="api/categories.spec.ts" time="0.354">
+</testcase>
+<testcase name="Categories API Tests › Get products by each category" classname="api/categories.spec.ts" time="3.446">
+</testcase>
+</testsuite>
+<testsuite name="api/products.spec.ts" timestamp="2025-06-27T13:48:58.109Z" hostname="chromium" tests="3" failures="0" skipped="0" time="1.18" errors="0">
+<testcase name="Products API Tests › Get all products" classname="api/products.spec.ts" time="0.358">
+</testcase>
+<testcase name="Products API Tests › Get single product" classname="api/products.spec.ts" time="0.376">
+</testcase>
+<testcase name="Products API Tests › Get products by category" classname="api/products.spec.ts" time="0.446">
+</testcase>
+</testsuite>
+<testsuite name="api/users.spec.ts" timestamp="2025-06-27T13:48:58.109Z" hostname="chromium" tests="5" failures="1" skipped="0" time="2.621" errors="0">
+<testcase name="Users API Tests › Get all users" classname="api/users.spec.ts" time="0.444">
+</testcase>
+<testcase name="Users API Tests › Get single user" classname="api/users.spec.ts" time="0.481">
+</testcase>
+<testcase name="Users API Tests › Create new user" classname="api/users.spec.ts" time="0.64">
+</testcase>
+<testcase name="Users API Tests › Update user" classname="api/users.spec.ts" time="0.63">
+<failure message="users.spec.ts:70:3 Update user" type="FAILURE">
+<![CDATA[  [chromium] › api/users.spec.ts:70:3 › Users API Tests › Update user ──────────────────────────────
+
+    Error: expect(received).toHaveProperty(path, value)
+
+    Expected path: "id"
+    Received path: []
+
+    Expected value: 1
+    Received value: {"email": "john.updated@gmail.com", "name": {"firstname": "John", "lastname": "Updated"}, "password": "newpassword", "username": "johnd_updated"}
+
+      82 |     const response = await apiClient.put('/users/1', updateData);
+      83 |     expect(response.status).toBe(200);
+    > 84 |     expect(response.data).toHaveProperty('id', 1);
+         |                           ^
+      85 |   });
+      86 |
+      87 |   test('Delete user', async () => {
+        at /Users/sharathhatter/code/projects/Du_Web_API/tests/api/users.spec.ts:84:27
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/api-users-Users-API-Tests-Update-user-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/api-users-Users-API-Tests-Update-user-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|api-users-Users-API-Tests-Update-user-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Users API Tests › Delete user" classname="api/users.spec.ts" time="0.426">
+</testcase>
+</testsuite>
+<testsuite name="e2e/shopping-flow.spec.ts" timestamp="2025-06-27T13:48:58.109Z" hostname="chromium" tests="3" failures="3" skipped="0" time="59.126" errors="0">
+<testcase name="E2E Shopping Flow Tests › Complete shopping journey with API validation" classname="e2e/shopping-flow.spec.ts" time="16.245">
+<failure message="shopping-flow.spec.ts:26:3 Complete shopping journey with API validation" type="FAILURE">
+<![CDATA[  [chromium] › e2e/shopping-flow.spec.ts:26:3 › E2E Shopping Flow Tests › Complete shopping journey with API validation › Navigate to website and login 
+
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: locator('text=Logged in as')
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('text=Logged in as')
+
+
+      39 |       await homePage.clickSignupLogin();
+      40 |       await loginPage.login(users.validUser.email, users.validUser.password);
+    > 41 |       await expect(page.locator('text=Logged in as')).toBeVisible();
+         |                                                       ^
+      42 |     });
+      43 |
+      44 |     // Step 3: Browse products
+        at /Users/sharathhatter/code/projects/Du_Web_API/tests/e2e/shopping-flow.spec.ts:41:55
+        at /Users/sharathhatter/code/projects/Du_Web_API/tests/e2e/shopping-flow.spec.ts:37:5
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-shopping-flow-E2E-Shop-f19bf-journey-with-API-validation-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-shopping-flow-E2E-Shop-f19bf-journey-with-API-validation-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-shopping-flow-E2E-Shop-f19bf-journey-with-API-validation-chromium/error-context.md
+
+    attachment #7: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-shopping-flow-E2E-Shop-f19bf-journey-with-API-validation-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/e2e-shopping-flow-E2E-Shop-f19bf-journey-with-API-validation-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-shopping-flow-E2E-Shop-f19bf-journey-with-API-validation-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-shopping-flow-E2E-Shop-f19bf-journey-with-API-validation-chromium/video.webm]]
+
+[[ATTACHMENT|e2e-shopping-flow-E2E-Shop-f19bf-journey-with-API-validation-chromium/error-context.md]]
+
+[[ATTACHMENT|e2e-shopping-flow-E2E-Shop-f19bf-journey-with-API-validation-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="E2E Shopping Flow Tests › Product search with API cross-validation" classname="e2e/shopping-flow.spec.ts" time="18.911">
+<failure message="shopping-flow.spec.ts:66:3 Product search with API cross-validation" type="FAILURE">
+<![CDATA[  [chromium] › e2e/shopping-flow.spec.ts:66:3 › E2E Shopping Flow Tests › Product search with API cross-validation › Search and validate electronics products 
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      87 |         // Cross-validation (UI should show results when API has products)
+      88 |         if (apiProducts.data.length > 0) {
+    > 89 |           expect(uiProductCount).toBeGreaterThan(0);
+         |                                  ^
+      90 |         }
+      91 |       });
+      92 |     }
+        at /Users/sharathhatter/code/projects/Du_Web_API/tests/e2e/shopping-flow.spec.ts:89:34
+        at /Users/sharathhatter/code/projects/Du_Web_API/tests/e2e/shopping-flow.spec.ts:77:7
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-shopping-flow-E2E-Shop-95dd4-h-with-API-cross-validation-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-shopping-flow-E2E-Shop-95dd4-h-with-API-cross-validation-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-shopping-flow-E2E-Shop-95dd4-h-with-API-cross-validation-chromium/error-context.md
+
+    attachment #7: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-shopping-flow-E2E-Shop-95dd4-h-with-API-cross-validation-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/e2e-shopping-flow-E2E-Shop-95dd4-h-with-API-cross-validation-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-shopping-flow-E2E-Shop-95dd4-h-with-API-cross-validation-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-shopping-flow-E2E-Shop-95dd4-h-with-API-cross-validation-chromium/video.webm]]
+
+[[ATTACHMENT|e2e-shopping-flow-E2E-Shop-95dd4-h-with-API-cross-validation-chromium/error-context.md]]
+
+[[ATTACHMENT|e2e-shopping-flow-E2E-Shop-95dd4-h-with-API-cross-validation-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="E2E Shopping Flow Tests › User authentication flow with API token validation" classname="e2e/shopping-flow.spec.ts" time="23.97">
+<failure message="shopping-flow.spec.ts:95:3 User authentication flow with API token validation" type="FAILURE">
+<![CDATA[  [chromium] › e2e/shopping-flow.spec.ts:95:3 › E2E Shopping Flow Tests › User authentication flow with API token validation › Login via UI 
+
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: locator('text=Logged in as')
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('text=Logged in as')
+
+
+      117 |       await homePage.clickSignupLogin();
+      118 |       await loginPage.login(users.validUser.email, users.validUser.password);
+    > 119 |       await expect(page.locator('text=Logged in as')).toBeVisible();
+          |                                                       ^
+      120 |     });
+      121 |
+      122 |     // Step 3: Validate user data consistency
+        at /Users/sharathhatter/code/projects/Du_Web_API/tests/e2e/shopping-flow.spec.ts:119:55
+        at /Users/sharathhatter/code/projects/Du_Web_API/tests/e2e/shopping-flow.spec.ts:115:5
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-shopping-flow-E2E-Shop-8d858-w-with-API-token-validation-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-shopping-flow-E2E-Shop-8d858-w-with-API-token-validation-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-shopping-flow-E2E-Shop-8d858-w-with-API-token-validation-chromium/error-context.md
+
+    attachment #7: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-shopping-flow-E2E-Shop-8d858-w-with-API-token-validation-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/e2e-shopping-flow-E2E-Shop-8d858-w-with-API-token-validation-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-shopping-flow-E2E-Shop-8d858-w-with-API-token-validation-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-shopping-flow-E2E-Shop-8d858-w-with-API-token-validation-chromium/video.webm]]
+
+[[ATTACHMENT|e2e-shopping-flow-E2E-Shop-8d858-w-with-API-token-validation-chromium/error-context.md]]
+
+[[ATTACHMENT|e2e-shopping-flow-E2E-Shop-8d858-w-with-API-token-validation-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ui/login.spec.ts" timestamp="2025-06-27T13:48:58.109Z" hostname="chromium" tests="2" failures="2" skipped="0" time="32.461" errors="0">
+<testcase name="Login Tests › Valid user login" classname="ui/login.spec.ts" time="17.861">
+<failure message="login.spec.ts:19:3 Valid user login" type="FAILURE">
+<![CDATA[  [chromium] › ui/login.spec.ts:19:3 › Login Tests › Valid user login › Verify successful login ────
+
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: locator('text=Logged in as')
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('text=Logged in as')
+
+
+      32 |
+      33 |     await allure.step('Verify successful login', async () => {
+    > 34 |       await expect(page.locator('text=Logged in as')).toBeVisible();
+         |                                                       ^
+      35 |     });
+      36 |   });
+      37 |
+        at /Users/sharathhatter/code/projects/Du_Web_API/tests/ui/login.spec.ts:34:55
+        at Function.step (/Users/sharathhatter/code/projects/Du_Web_API/node_modules/allure-playwright/src/helpers.ts:21:17)
+        at /Users/sharathhatter/code/projects/Du_Web_API/tests/ui/login.spec.ts:33:18
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-login-Login-Tests-Valid-user-login-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-login-Login-Tests-Valid-user-login-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/ui-login-Login-Tests-Valid-user-login-chromium/error-context.md
+
+    attachment #7: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-login-Login-Tests-Valid-user-login-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-login-Login-Tests-Valid-user-login-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|ui-login-Login-Tests-Valid-user-login-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|ui-login-Login-Tests-Valid-user-login-chromium/video.webm]]
+
+[[ATTACHMENT|ui-login-Login-Tests-Valid-user-login-chromium/error-context.md]]
+
+[[ATTACHMENT|ui-login-Login-Tests-Valid-user-login-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Tests › Invalid user login" classname="ui/login.spec.ts" time="14.6">
+<failure message="login.spec.ts:38:3 Invalid user login" type="FAILURE">
+<![CDATA[  [chromium] › ui/login.spec.ts:38:3 › Login Tests › Invalid user login ────────────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: locator('text=Your email or password is incorrect!')
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('text=Your email or password is incorrect!')
+
+
+      41 |     await homePage.clickSignupLogin();
+      42 |     await loginPage.login(users.invalidUser.email, users.invalidUser.password);
+    > 43 |     await expect(page.locator('text=Your email or password is incorrect!')).toBeVisible();
+         |                                                                             ^
+      44 |   });
+      45 | });
+      46 |  
+        at /Users/sharathhatter/code/projects/Du_Web_API/tests/ui/login.spec.ts:43:77
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-login-Login-Tests-Invalid-user-login-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/ui-login-Login-Tests-Invalid-user-login-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/ui-login-Login-Tests-Invalid-user-login-chromium/error-context.md
+
+    attachment #7: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/ui-login-Login-Tests-Invalid-user-login-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/ui-login-Login-Tests-Invalid-user-login-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|ui-login-Login-Tests-Invalid-user-login-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|ui-login-Login-Tests-Invalid-user-login-chromium/video.webm]]
+
+[[ATTACHMENT|ui-login-Login-Tests-Invalid-user-login-chromium/error-context.md]]
+
+[[ATTACHMENT|ui-login-Login-Tests-Invalid-user-login-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ui/products.spec.ts" timestamp="2025-06-27T13:48:58.109Z" hostname="chromium" tests="2" failures="0" skipped="0" time="20.646" errors="0">
+<testcase name="Products Tests › Search for products" classname="ui/products.spec.ts" time="11.443">
+</testcase>
+<testcase name="Products Tests › Add product to cart" classname="ui/products.spec.ts" time="9.203">
+</testcase>
+</testsuite>
+</testsuites>

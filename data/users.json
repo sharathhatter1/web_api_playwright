@@ -1,0 +1,20 @@
+{
+   "validUser": {
+    "name": "John Doe",
+    "email": "john.doe@test.com",
+    "password": "Test123!",
+    "firstName": "John",
+    "lastName": "Doe",
+    "company": "Test Corp",
+    "address": "123 Test St",
+    "city": "Test City",
+    "state": "Test State",
+    "zipcode": "12345",
+    "mobileNumber": "1234567890"
+  },
+  "invalidUser": {
+    "email": "invalid@test.com",
+    "password": "wrongpass"
+  }
+}
+ 

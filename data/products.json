@@ -1,0 +1,11 @@
+{
+   "searchTerms": ["dress", "shirt", "jeans"],
+  "categories": ["Women", "Men", "Kids"],
+  "apiProducts": {
+    "electronics": 1,
+    "jewelery": 2,
+    "mensClothing": 3,
+    "womensClothing": 4
+  }
+}
+ 

@@ -1,0 +1,24 @@
+{
+   "name": "playwright-automation-framework",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:api": "playwright test tests/api",
+    "test:e2e": "playwright test tests/ui",
+    "allure:generate": "allure generate allure-results --clean",
+    "allure:open": "allure open allure-report",
+    "test:report": "npm run test && npm run allure:generate && npm run allure:open"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.40.0",
+    "allure-playwright": "^2.9.2",
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  }
+}
+ 
